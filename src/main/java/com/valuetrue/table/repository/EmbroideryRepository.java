@@ -14,7 +14,7 @@ public interface EmbroideryRepository extends JpaRepository<Embroidery,Integer> 
     List<Embroidery> findByTableId(int table_id);
     List<Embroidery> findByName(String name);
     Embroidery findById(int id);
-
+    List<Embroidery> findByNameOrderByTableId(String name);
 
 }
 

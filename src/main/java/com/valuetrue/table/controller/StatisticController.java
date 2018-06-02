@@ -83,7 +83,7 @@ public class StatisticController {
             statisticForm.setOrderTableList(orderTableList);
         }else if (team_id == 2){
             // Get info Team by Name
-            List<Embroidery> embroideryList = this.embroideryService.getAllEmbroideriesByName(name);
+            List<Embroidery> embroideryList = this.embroideryService.getAllEmbroideriesByNameOrderByTableId(name);
 
             // Get info nameTable by id
             List<OrderTable> orderTableList = new ArrayList<OrderTable>();
@@ -97,7 +97,7 @@ public class StatisticController {
             statisticForm.setOrderTableList(orderTableList);
         }else if(team_id == 3){
             // Get info Team by Name
-            List<Sewing> sewingList  = this.sewingService.getAllSewingByName(name);
+            List<Sewing> sewingList  = this.sewingService.getAllSewingByNameOrderByTableId(name);
 
             // Get info nameTable by id
             List<OrderTable> orderTableList = new ArrayList<OrderTable>();

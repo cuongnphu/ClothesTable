@@ -10,7 +10,6 @@ $(document).ready(function () {
         $.post("/statistic", {name: txtName, team_id: txtTeamId}, function(result){
             var str = JSON.stringify(result);
             var json = JSON.parse(str);
-            console.log(json);
             $("#report > tr > td > div[class=\"container-fluid\"]").empty();
             if(txtTeamId == 1){
                 $("#report > .tb-row > #name").text(txtName);
@@ -29,7 +28,12 @@ $(document).ready(function () {
                         "<div class='col-sm-3'></div>" +
                         "<div class='col-sm-3'></div>" +
                         "</div>");
-                    $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    if(i > 0){
+                        if(nameTable != json.orderTableList[i-1].name)
+                            $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    }else{
+                        $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    }
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(2)").text(price);
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(3)").text(quantity);
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(4)").text(total.toLocaleString('en'));
@@ -47,10 +51,17 @@ $(document).ready(function () {
                     var total = json.embroideryList[i].total;
                     totalall = totalall + total;
                     $("#report > tr > td > div[class=\"container-fluid\"]").append("<div class='row' style='border: 1px dashed darkgrey'>" +
-                        "<div class='col-sm-5'></div>" +
-                        "<div class='col-sm-7'></div>" +
+                        "<div class='col-sm-3'></div>" +
+                        "<div class='col-sm-3'></div>" +
+                        "<div class='col-sm-3'></div>" +
+                        "<div class='col-sm-3'></div>" +
                         "</div>");
-                    $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    if(i > 0){
+                        if(nameTable != json.orderTableList[i-1].name)
+                            $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    }else{
+                        $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    }
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(2)").text(price);
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(3)").text(quantity);
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(4)").text(total.toLocaleString('en'));
@@ -68,10 +79,17 @@ $(document).ready(function () {
                     var total = json.sewingList[i].total;
                     totalall = totalall + total;
                     $("#report > tr > td > div[class=\"container-fluid\"]").append("<div class='row' style='border: 1px dashed darkgrey'>" +
-                        "<div class='col-sm-5'></div>" +
-                        "<div class='col-sm-7'></div>" +
+                        "<div class='col-sm-3'></div>" +
+                        "<div class='col-sm-3'></div>" +
+                        "<div class='col-sm-3'></div>" +
+                        "<div class='col-sm-3'></div>" +
                         "</div>");
-                    $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    if(i > 0){
+                        if(nameTable != json.orderTableList[i-1].name)
+                            $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    }else {
+                        $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(1)").text(nameTable);
+                    }
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(2)").text(price);
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(3)").text(quantity);
                     $("#report > tr > td > div[class=\'container-fluid\'] > div:nth-of-type("+index+") > div.col-sm-3:nth-of-type(4)").text(total.toLocaleString('en'));

@@ -66,4 +66,9 @@ public class EmbroideryDAOImpl implements EmbroideryDAO {
     public List<Embroidery> getAllEmbroideriesByName(String name) {
         return embroideryRepository.findByName(name);
     }
+
+    @Override
+    public List<Embroidery> getAllEmbroideriesByNameOrderByTableId(String name) {
+        return embroideryRepository.findByNameOrderByTableId(name);
+    }
 }

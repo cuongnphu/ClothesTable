@@ -10,8 +10,10 @@ import java.util.List;
 
 @Repository
 public interface SewingRepository extends JpaRepository<Sewing,Integer> {
+
     Sewing findById(int id);
     List<Sewing> findByTableId(int table_id);
     List<Sewing> findByName(String name);
+    List<Sewing> findByNameOrderByTableId(String name);
 
 }

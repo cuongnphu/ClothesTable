@@ -67,4 +67,9 @@ public class SewingDAOImpl implements SewingDAO {
     public List<Sewing> getAllSewingByName(String name) {
         return sewingRepository.findByName(name);
     }
+
+    @Override
+    public List<Sewing> getAllSewingByNameOrderByTableId(String name) {
+        return sewingRepository.findByNameOrderByTableId(name);
+    }
 }

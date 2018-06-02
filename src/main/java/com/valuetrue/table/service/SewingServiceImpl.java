@@ -70,4 +70,11 @@ public class SewingServiceImpl implements SewingService {
             return this.sewingDAO.getAllSewingByName(name);
         return null;
     }
+
+    @Override
+    public List<Sewing> getAllSewingByNameOrderByTableId(String name) {
+        if(name != "")
+            return this.sewingDAO.getAllSewingByNameOrderByTableId(name);
+        return null;
+    }
 }

@@ -15,4 +15,5 @@ public interface SewingService {
     public List<Sewing> getAllSewings();
     public List<Sewing> getAllSewingsByTableId(int table_id);
     public List<Sewing> getAllSewingByName(String name);
+    public List<Sewing> getAllSewingByNameOrderByTableId(String name);
 }

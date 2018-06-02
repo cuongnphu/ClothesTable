@@ -16,5 +16,6 @@ public interface EmbroideryDAO {
     public List<Embroidery> getAllEmbroideries();
     public List<Embroidery> getAllEmbroideriesByTableId(int table_id);
     public List<Embroidery> getAllEmbroideriesByName(String name);
+    public List<Embroidery> getAllEmbroideriesByNameOrderByTableId(String name);
 
 }
