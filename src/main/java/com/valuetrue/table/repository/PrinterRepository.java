@@ -13,5 +13,6 @@ public interface PrinterRepository extends JpaRepository<Printer,Integer> {
     Printer findById(int id);
     List<Printer> findByTableId(int table_id);
     List<Printer> findByName(String name);
+    List<Printer> findByNameOrderByTableId(String name);
 
 }

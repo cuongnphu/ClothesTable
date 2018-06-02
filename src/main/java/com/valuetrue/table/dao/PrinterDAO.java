@@ -14,4 +14,5 @@ public interface PrinterDAO {
     public List<Printer> getAllPrinters();
     public List<Printer> getAllPrintersByTableId(int table_id);
     public List<Printer> getAllPrinterByName(String name);
+    public List<Printer> getAllPrinterByNameAndOrderByTableId(String name);
 }

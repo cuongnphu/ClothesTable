@@ -69,7 +69,7 @@ public class StatisticController {
 
         if(team_id == 1){
             // Get info Team by Name
-            List<Printer> printerList = this.printerService.getAllPrinterByName(name);
+            List<Printer> printerList = this.printerService.getAllPrinterByNameAndOrderByTableId(name);
 
             // Get info nameTable by id
             List<OrderTable> orderTableList = new ArrayList<OrderTable>();

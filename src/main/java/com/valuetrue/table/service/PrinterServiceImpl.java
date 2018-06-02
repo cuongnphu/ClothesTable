@@ -69,4 +69,11 @@ public class PrinterServiceImpl implements PrinterService {
             return this.printerDAO.getAllPrinterByName(name);
         return null;
     }
+
+    @Override
+    public List<Printer> getAllPrinterByNameAndOrderByTableId(String name) {
+        if(name != "")
+            return this.printerDAO.getAllPrinterByNameAndOrderByTableId(name);
+        return null;
+    }
 }

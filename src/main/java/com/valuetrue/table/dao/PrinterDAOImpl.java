@@ -66,4 +66,9 @@ public class PrinterDAOImpl implements PrinterDAO {
     public List<Printer> getAllPrinterByName(String name) {
         return printerRepository.findByName(name);
     }
+
+    @Override
+    public List<Printer> getAllPrinterByNameAndOrderByTableId(String name) {
+        return printerRepository.findByNameOrderByTableId(name);
+    }
 }
